@@ -10,9 +10,9 @@ function sendEmail(){
         SecureToken : "923c4b85-5eeb-4d3c-89dc-b556a1596e16",
         To : 'ellie.li201607@gmail.com',
         From : email,
-        Subject : "This is the subject",
-        Body : "And this is the body"
+        Subject : "Message from " + firstname +" "+ lastname,
+        Body : `<h4>The phone number is ${phone}</h4><h4>The message is: </h4><p>${message}</p>`
     }).then(
-    message => alert(message)
+    res => alert(res)
     );
 }
