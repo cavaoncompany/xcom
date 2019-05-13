@@ -14,7 +14,27 @@
     <!-- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/6773FB36-6498-364E-8507-8569F6DD40C7/main.js" charset="UTF-8"></script> -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function sendEmail(){
+            let firstname = document.getElementById("firstname").value;
+            let lastname = document.getElementById("lastname").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phonenumber").value;
+            let message = document.getElementById("message").value;
+           
+            Email.send({
+                SecureToken : "df78e6f4-9e45-4efc-b6fd-8c0f348df7ff",
+                To : 'ellie.li201607@gmail.com',
+                From : email,
+                Subject : "This is the subject",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <style>
         body,
@@ -40,12 +60,6 @@
         }
 
         .hero-text {
-            /* text-align: left;
-            position: absolute;
-            top: 50%;
-            left: 30%;
-            transform: translate(-50%, -50%); */
-            /* margin-left: 40px; */
             color: white;
            
         }
@@ -281,25 +295,25 @@
         </div>
         <div class="col-md-6 ">
             <div class="col inputstyle">
-                <input type="text" class="form-control" placeholder="First name">
+                <input type="text" class="form-control" id="firstname" placeholder="First name">
             </div>
             <div class="col inputstyle">
-                <input type="email" class="form-control" placeholder="Email">
+                <input type="email" class="form-control"  id="email" placeholder="Email">
             </div>
         </div>
         <div class="col-md-6">
             <div class="col inputstyle">
-                <input type="text" class="form-control" placeholder="Last name">
+                <input type="text" class="form-control" id="lastname" placeholder="Last name">
             </div>
             <div class="col inputstyle">
-                <input type="number" class="form-control" placeholder="Phone" height="50px">
+                <input type="number" class="form-control" id="phonenumber" placeholder="Phone" height="50px">
             </div>
         </div>
         <div class="col-md-12 inputstyle">
-            <textarea type="text" class="form-control" id="inputAddress" placeholder="Message"
+            <textarea type="text" class="form-control" id="message" placeholder="Message"
                 style="margin-bottom:20px;" rows="6"></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-primary">Send Message</button>
+        <button type="submit" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
     </div>
     <footer class="container-fluid py-4" style=" background: #153f17; margin-top:50px; padding:20px; color:#FFF">
         <div class="row ">
