@@ -3,12 +3,12 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDataTypesTable extends Migration {
+class CreateDataTypeTable extends Migration {
 
 	/**
 	 * Run the migrations.
 	 *
-	 * @return void
+	 * @return voids
 	 */
 	public function up()
 	{
