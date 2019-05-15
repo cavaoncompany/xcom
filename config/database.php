@@ -46,10 +46,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'us-cdbr-iron-east-02.cleardb.net',
-            'database' => 'heroku_01c1992d1898693',
-            'username' => 'babbcef9dfa872',
-            'password' => '0305c6d9',
+            'host' => 'tkck4yllxdrw0bhi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            'database' => 'odz0mgdasa2ev63v',
+            'username' => 'dmisalz38ct8ve7e',
+            'password' => 'ymh8nrul7j633n73',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
