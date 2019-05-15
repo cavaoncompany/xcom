@@ -45,12 +45,11 @@ return [
         ],
 
         'mysql' => [
-            'dsn' => '',
+            'driver' => 'mysql',
             'hostname' => 'us-cdbr-iron-east-02.cleardb.net',
             'database' => 'heroku_01c1992d1898693',
             'username' => 'babbcef9dfa872',
             'password' => '0305c6d9',
-            'dbdriver' => 'mysql',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
