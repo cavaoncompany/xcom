@@ -61,7 +61,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src=<?php {{$content[17]->content}} ?>/>&nbsp; &nbsp; {{ $content[0]->content}}
+                            <img src=<?php $content[17]->content ?>/>&nbsp; &nbsp; {{ $content[0]->content}}
                         </li>
                     </ul>
 
