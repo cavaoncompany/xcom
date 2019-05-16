@@ -18,7 +18,7 @@
     </script>
     <script src="../js/email.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../resources/xcomstyle.css">
+    <link rel="stylesheet" type="text/css" href="xcomstyle.css">
     
 </head>
 <style>
