@@ -55,10 +55,13 @@ return [
     |
     */
 
-    'storage' => [
-        'disk' => env('FILESYSTEM_DRIVER', 'public'),
-    ],
+    // 'storage' => [
+    //     'disk' => env('FILESYSTEM_DRIVER', 'public'),
+    // ],
 
+    'storage' => [
+        'disk' => env('FILESYSTEM_DRIVER'),
+    ],
     /*
     |--------------------------------------------------------------------------
     | Media Manager
