@@ -53,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#"><img src=<?php $content[16]->content?> alt="logo"></a>
+                    <a href="#"><img src="../cms/public/storage/XCOMHomePage/xcomlogo.png" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -61,7 +61,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src=<?php $content[17]->content ?>/>&nbsp; &nbsp; {{ $content[0]->content}}
+                            <img src="../cms/public/storage/XCOMHomePage/phoneicon.png" />&nbsp; &nbsp; {{ $content[0]->content}}
                         </li>
                     </ul>
 
@@ -166,7 +166,7 @@
                 </nav>
             </div>
             <div class="col-md-4 text-center" style="padding: 10px 0;">
-                <img src="../public/storage/XCOMHomePage/Footerlogo.png" alt="footerlogoimg" />
+                <img src="../cms/public/storage/XCOMHomePage/Footerlogo.png" alt="footerlogoimg" />
             </div>
             <div class="col-md-4 text-center">
                 <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $content[13]->content}}</p>
