@@ -60,7 +60,7 @@ return [
     // ],
 
     'storage' => [
-        'disk' => env('FILESYSTEM_DRIVER', '/app'),
+        'disk' => env('FILESYSTEM_DRIVER', 'public'),
     ],
     /*
     |--------------------------------------------------------------------------
