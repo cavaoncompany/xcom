@@ -14,7 +14,7 @@ return [
         'add_default_role_on_register' => true,
         'default_role'                 => 'user',
         'namespace'                    => null,
-        'default_avatar'               => 'users/default.png',
+        'default_avatar'               => '../images/default.png',
         'redirect'                     => '/admin',
     ],
 
