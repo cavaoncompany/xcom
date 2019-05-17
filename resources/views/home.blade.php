@@ -19,14 +19,16 @@
     <script src="../js/email.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="xcomstyle.css">
-    
+    @foreach($content as $one)
+    <?php  $xcomcontent[$one->category] = $one->content  ?>
+    @endforeach
 </head>
 <style>
      #about {
         position: relative;
         text-align: center;
         color: white;
-        background-image: url({{$content[15]->content}});
+        background-image: url({{$xcomcontent['AboutBackgroundImageUrl']}});
         width:100%;
         background-size: 100% 100%;
         height:300px;
@@ -34,7 +36,7 @@
         }
 
         .hero-image {
-            background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url({{$content[14]->content}});
+            background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url({{$xcomcontent['MainImageUrl']}});
             height: 80%;
             background-position: center;
             background-repeat: no-repeat;
@@ -61,7 +63,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src="../images/phoneicon.png" />&nbsp; &nbsp; {{ $content[0]->content}}
+                            <img src="../images/phoneicon.png" />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
                         </li>
                     </ul>
 
@@ -74,8 +76,8 @@
 
         <div class="hero-text align-center">
             <div class="container">
-                <h1>{{ $content[1]->content }}</h1>
-                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $content[2]->content }}</p>
+                <h1>{{ $xcomcontent['MainTitle'] }}</h1>
+                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $xcomcontent['MainDescription']}}</p>
                 <a type="button" class="startBtnStyle">Go Started Now</a>
 
             </div>
@@ -83,7 +85,7 @@
     </div>
 
     <div class="services-header text-center" id="ourServices">
-        <h3 style="font-size: 24px; color:#212121; ">{{ $content[3]->content }}</h3>
+        <h3 style="font-size: 24px; color:#212121; ">{{ $xcomcontent['ServiceTitle'] }}</h3>
         <div class="line" style="padding-top:15px"></div>
     </div>
 
@@ -92,15 +94,15 @@
             <div class="col-md-3 ">
                 <div style=" max-height:300px; margin: 0 5px ">
                     <h1 class="my-0 font-weight-normal">01</h1>
-                    <h4>{{ $content[4]->content}}</h4>
-                    <p>{{ $content[5]->content}}</p>
+                    <h4>{{ $xcomcontent['FirstServiceTitle']}}</h4>
+                    <p>{{ $xcomcontent['FirstServiceDescription']}}</p>
                 </div>
             </div>
             <div class="col-md-3 ">
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal">02</h1>
-                    <h4>{{ $content[6]->content}}</h4>
-                    <p>{{ $content[7]->content}}</p>
+                    <h4>{{ $xcomcontent['SecondServiceTitle']}}</h4>
+                    <p>{{ $xcomcontent['SecondServiceDescription']}}</p>
 
                 </div>
             </div>
@@ -108,15 +110,15 @@
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal ">03</h1>
 
-                    <h4>{{ $content[8]->content}}</h4>
-                    <p>{{ $content[9]->content}}</p>
+                    <h4>{{ $xcomcontent['ThirdServiceTitle']}}</h4>
+                    <p>{{ $xcomcontent['ThirdServiceDescription']}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div style="max-height:300px; margin:5px;">
                     <h1 class="my-0 font-weight-normal">04</h1>
-                    <h4>{{ $content[10]->content}}</h4>
-                    <p>{{ $content[11]->content}}</p>
+                    <h4>{{ $xcomcontent['FourthServiceTitle']}}</h4>
+                    <p>{{ $xcomcontent['FourthServiceDescription']}}</p>
 
                 </div>
             </div>
@@ -125,7 +127,7 @@
     </div>
 
     <div id="about">
-        <p class="centered">{{ $content[12]->content}}</p>
+        <p class="centered">{{ $xcomcontent['AboutDescription']}}</p>
     </div>
 
     <div id="contactform" class="container text-center my-5">
@@ -169,7 +171,7 @@
                 <img src="../images/Footerlogo.png" alt="footerlogoimg" />
             </div>
             <div class="col-md-4 text-center">
-                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $content[13]->content}}</p>
+                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $xcomcontent['FooterCopyright']}}</p>
             </div>
 
         </div>
