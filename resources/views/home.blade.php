@@ -54,8 +54,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-                    <a href="#"><img src="$xcomcontent['LOGOImageUrl']" alt="logo"></a>
+                    </button>'
+                    <a href="#"><img src='<?php echo $xcomcontent['LOGOImageUrl'] ?>'  alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -63,7 +63,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src="$xcomcontent['PhoneIconImageUrl']"  > />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
+                            <img src="$xcomcontent['PhoneIconImageUrl']"  />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
                         </li>
                     </ul>
 
