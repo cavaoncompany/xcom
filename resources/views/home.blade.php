@@ -28,7 +28,7 @@
         position: relative;
         text-align: center;
         color: white;
-        background-image: url(<php? $xcomcontent['AboutBackgroundImageUrl'] ?>);
+        background-image: url("$xcomcontent['AboutBackgroundImageUrl']");
         width:100%;
         background-size: 100% 100%;
         height:300px;
@@ -36,7 +36,7 @@
         }
 
         .hero-image {
-            background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url({{$xcomcontent['MainImageUrl']}});
+            background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url("$xcomcontent['MainImageUrl']");
             height: 80%;
             background-position: center;
             background-repeat: no-repeat;
@@ -55,7 +55,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#"><img src="../images/xcomlogo.png" alt="logo"></a>
+                    <a href="#"><img src="$xcomcontent['LOGOImageUrl']" alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -63,7 +63,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src=<?php $xcomcontent['LOGOImageUrl'] ?> />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
+                            <img src="$xcomcontent['PhoneIconImageUrl']"  > />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
                         </li>
                     </ul>
 
