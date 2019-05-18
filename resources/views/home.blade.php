@@ -28,7 +28,7 @@
         position: relative;
         text-align: center;
         color: white;
-        background-image: url({{$xcomcontent['AboutBackgroundImageUrl']}});
+        background-image: url(<php? $xcomcontent['AboutBackgroundImageUrl'] ?>);
         width:100%;
         background-size: 100% 100%;
         height:300px;
@@ -63,7 +63,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src="../images/phoneicon.png" />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
+                            <img src=<?php $xcomcontent['LOGOImageUrl'] ?> />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
                         </li>
                     </ul>
 
