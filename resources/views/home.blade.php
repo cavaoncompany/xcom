@@ -37,7 +37,7 @@
 
         .hero-image {
             background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['MainImageUrl'] ?>);
-            height: 80%;
+            height: 662px;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -54,7 +54,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>'
+                    </button>
                     <a href="#"><img src='<?php echo $xcomcontent['LOGOImageUrl'] ?>'  alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -137,15 +137,18 @@
         </div>
         <div class="col-md-6 ">
             <div class="col inputstyle">
-                <input type="text" class="form-control" id="firstname" placeholder="First name">
+                <span id="firstnameerror" class="errormsg"></span>
+                <input type="text" class="form-control" id="firstname" placeholder="* First name">
             </div>
             <div class="col inputstyle">
-                <input type="email" class="form-control"  id="email" placeholder="Email">
+            <span id="emailerror" class="errormsg"></span>
+                <input type="email" class="form-control"  id="email" placeholder="* Email">
             </div>
         </div>
         <div class="col-md-6">
             <div class="col inputstyle">
-                <input type="text" class="form-control" id="lastname" placeholder="Last name">
+                <span id="lastnameerror" class="errormsg"></span>
+                <input type="text" class="form-control" id="lastname" placeholder="* Last name">
             </div>
             <div class="col inputstyle">
                 <input type="number" class="form-control" id="phonenumber" placeholder="Phone" height="50px">
