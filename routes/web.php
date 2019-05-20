@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('home', compact('content'));
 });
 
+Route::post('/', function(\Illluminate\Http\Request $request){
+        var_dump($request->all());
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
