@@ -41,6 +41,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+        height: 662px;
         }
 
 </style>
