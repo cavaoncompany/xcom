@@ -22,6 +22,8 @@
     @foreach($content as $one)
     <?php  $xcomcontent[$one->category] = $one->content  ?>
     @endforeach
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcvY6QUAAAAAJazpAX_vHOCJPNnOYEBizvJnTSm"></script>
 </head>
 <style>
      #about {
@@ -161,6 +163,9 @@
             <div class="col-md-12 inputstyle">
                 <textarea type="text" class="form-control" id="message" placeholder="Message"
                     style="margin-bottom:20px; margin:0 auto; width:94%" rows="6"></textarea>
+            </div>
+            <div class="col-md-12 inputstyle">
+                <div class="g-recapcha" ></div>
             </div>
             <div class="col-md-12 inputstyle">
                 <button type="submit" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
