@@ -18,30 +18,33 @@
            
         }
         @media screen and (min-width: 420px){
-        .hero-text h1{
-            font-size:64px; 
-            padding-top:100px;
-            width:460px;
+            .hero-image{
+                height: 662px;
+                }
+
+            .hero-text h1{
+                font-size:64px; 
+                padding-top:100px;
+                width:460px;
             }
-        .hero-text p{
+            .hero-text p{
                 width:470px;
             }
 
-        .hero-image{
-            height: 662px;
-            }
+       
            
         }
 
         @media screen and (max-width: 419px){
-        .hero-text h1{
+            .hero-image{
+                height:500px;
+            }
+
+            .hero-text h1{
             font-size:32px; 
             padding-top:50px;
             }
-        .hero-image{
-            height:500px;
-        }
-       
+        
         }
         nav .row {
             margin-top: 20px;

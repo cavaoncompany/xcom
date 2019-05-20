@@ -35,13 +35,12 @@
         margin: 150px 0 50px 0;
         }
 
-        .hero-image {
-            background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['MainImageUrl'] ?>);
-          
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
+    .hero-image {
+        background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['MainImageUrl'] ?>);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
         }
 
 </style>

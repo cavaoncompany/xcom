@@ -14,16 +14,16 @@ function sendEmail(){
     
    
 
-    if (email.length === 0) {
+    if (!email) {
             document.getElementById('emailerror').innerHTML = "Please type in email address";
             return 
         }
-    if (firstname.length === 0) {
+    if (!firstname) {
             document.getElementById('firstnameerror').innerHTML = "Please type in first name";
             return 
         }
 
-    if (lastname.length === 0) {
+    if (!lastname) {
             document.getElementById('lastnameerror').innerHTML = "Please type in last name";
             return 
         }
