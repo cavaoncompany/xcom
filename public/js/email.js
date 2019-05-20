@@ -14,10 +14,7 @@ function sendEmail(){
     document.getElementById('firstnameerror').innerHTML = '';
     document.getElementById('lastnameerror').innerHTML = '';
 
-    if (email.length == 0) {
-            document.getElementById('emailerror').innerHTML = "Please type in email address";
-            return 
-        }
+  
     if (firstname == 0) {
             document.getElementById('firstnameerror').innerHTML = "Please type in first name";
             return 
@@ -25,6 +22,11 @@ function sendEmail(){
 
     if (lastname == 0) {
             document.getElementById('lastnameerror').innerHTML = "Please type in last name";
+            return 
+        }
+        
+    if (email.length == 0) {
+            document.getElementById('emailerror').innerHTML = "Please type in email address";
             return 
         }
 
