@@ -18,7 +18,7 @@
     </script>
     <script src="../js/email.js?ver={{date('YmdHis')}}" ></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="xcomstyle.css">
+    <link rel="stylesheet" type="text/css" href="xcomstyle.css?ver={{date('YmdHis')}}">
     @foreach($content as $one)
     <?php  $xcomcontent[$one->category] = $one->content  ?>
     @endforeach
