@@ -1,3 +1,24 @@
+<?php
+
+    if(isset($_POST['contactButton'])){
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $privatekey = "6LcvY6QUAAAAAHAfoHmGogD1HTuqpSbU0MIIOw7J";
+
+        $response = file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
+        
+        $data = json_decode($response);
+
+        if(isset($data->success) AND $data->success == true){
+            header('Location: home.blade.php?CaptchaPass=True');
+        }else{
+            header('Location: home.blade.php?CaptchaFail=True');
+        }
+    }
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -132,11 +153,17 @@
         <p class="centered">{{ $xcomcontent['AboutDescription']}}</p>
     </div>
 
-    <div id="contactform" class="container text-center my-5">
+    <form id="contactform" class="container text-center" action="" method="post">
         <div class="row">
             <div class="col-md-12" style="margin-bottom: 40px;">
                 <h4 style="margin: 30px 0; font-size:24px;">Contact Us</h4>
                 <div class="line"></div>
+                <?php if(isset($_GET['CaptchaPass'])){ ?>
+                    <div class="col-md-12">Message Sent</div>
+                <?php }?>
+                <?php if(isset($_GET['CaptchaFail'])){ ?>
+                    <div class="col-md-12">Message failed</div>
+                <?php }?>
             </div>
             <div class="col-md-12">     
             <div class="col-md-6 inputstyle">
@@ -168,10 +195,10 @@
                 <div class="g-recapcha" ></div>
             </div>
             <div class="col-md-12 inputstyle">
-                <button type="submit" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
+                <button type="submit" id="contactButton" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
             </div>
         </div>
-    </div>
+    </form>
     <footer class="container-fluid py-4" style=" background: #153f17; margin-top:50px; padding:20px; color:#FFF">
         <div class="row ">
             <div class="col-md-4 text-center" style="padding: 20px 0 10px 0">
