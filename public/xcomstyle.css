@@ -26,6 +26,11 @@
         .hero-text p{
                 width:470px;
             }
+
+        .hero-image{
+            height: 662px;
+            }
+           
         }
 
         @media screen and (max-width: 419px){
@@ -34,7 +39,7 @@
             padding-top:50px;
             }
         .hero-image{
-            height:80%;
+            height:500px;
         }
        
         }

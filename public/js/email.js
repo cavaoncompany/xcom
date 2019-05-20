@@ -1,5 +1,9 @@
 
 function sendEmail(){
+    document.getElementById('emailerror').innerHTML = '';
+    document.getElementById('firstnameerror').innerHTML = '';
+    document.getElementById('lastnameerror').innerHTML = '';
+
     let firstname = document.getElementById("firstname").value;
     let lastname = document.getElementById("lastname").value;
     let email = document.getElementById("email").value;
@@ -8,19 +12,19 @@ function sendEmail(){
     
     let emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     
-    document.getElementById('errname').innerHTML = '';
+   
 
-    if (email.length == 0) {
+    if (email.length === 0) {
             document.getElementById('emailerror').innerHTML = "Please type in email address";
             return 
         }
-    if (firstname.length == 0) {
+    if (firstname.length === 0) {
             document.getElementById('firstnameerror').innerHTML = "Please type in first name";
             return 
         }
 
-    if (lastname.length == 0) {
-            document.getElementById('firstnameerror').innerHTML = "Please type in last name";
+    if (lastname.length === 0) {
+            document.getElementById('lastnameerror').innerHTML = "Please type in last name";
             return 
         }
 
