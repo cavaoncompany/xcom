@@ -136,7 +136,7 @@
                 <h4 style="margin: 30px 0; font-size:24px;">Contact Us</h4>
                 <div class="line"></div>
             </div>
-        
+            <div class="col-md-12">     
             <div class="col-md-6 inputstyle">
                 
                 <input type="text" class="form-control" id="firstname" placeholder="* First name">
@@ -147,8 +147,8 @@
                 <input type="text" class="form-control" id="lastname" placeholder="* Last name">
                 <span id="lastnameerror" class="errormsg"></span>
             </div>
-       
-        
+        </div>
+        <div class="col-md-12">
             <div class="col-md-6 inputstyle">
             
                 <input type="email" class="form-control"  id="email" placeholder="* Email">
@@ -157,10 +157,10 @@
             <div class="col-md-6 inputstyle">
                 <input type="number" class="form-control" id="phonenumber" placeholder="Phone" height="50px">
             </div>
-        
+        </div>
             <div class="col-md-12 inputstyle">
                 <textarea type="text" class="form-control" id="message" placeholder="Message"
-                    style="margin-bottom:20px;" rows="6"></textarea>
+                    style="margin-bottom:20px; margin:0 auto; width:94%" rows="6"></textarea>
             </div>
             <div class="col-md-12 inputstyle">
                 <button type="submit" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
