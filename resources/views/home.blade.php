@@ -16,7 +16,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-    <script src="../js/email.js"></script>
+    <script src="../js/email.js?ver={{date('YmdHis')}}" ></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="xcomstyle.css">
     @foreach($content as $one)
