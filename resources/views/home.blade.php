@@ -141,7 +141,7 @@
                 <input type="text" class="form-control" id="firstname" placeholder="* First name">
             </div>
             <div class="col inputstyle">
-            <span id="emailerror" class="errormsg"></span>
+                <span id="emailerror" class="errormsg"></span>
                 <input type="email" class="form-control"  id="email" placeholder="* Email">
             </div>
         </div>
