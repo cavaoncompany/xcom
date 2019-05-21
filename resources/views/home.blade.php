@@ -174,7 +174,7 @@
                 @endif
             </div>
             <div class="col-md-12 inputstyle">
-                <button type="submit" id="contactButton" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
+                <button type="submit" name="send" class="btn btn-outline-primary" >Send Message</button>
             </div>
         </div>
     </form>
