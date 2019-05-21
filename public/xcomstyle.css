@@ -145,12 +145,12 @@
         }
 
         .form-control{
-            border-radius: 0; !important
-            height: 50px;
+            border-radius: 0 !important;
+            height: 50px !important;
         }
 
         #contactform .btn{
-            border-radius: 0; !important
+            border-radius: 0 !important;
         }
 
         .nav a, nav a{
