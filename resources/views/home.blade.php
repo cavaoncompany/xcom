@@ -166,7 +166,7 @@
                 <textarea type="text" class="form-control" name="message" placeholder="Message"
                     style="margin-bottom:20px; margin:0 auto; width:94%" rows="6"></textarea>
             </div>
-            <div class="col-md-12 ">
+            <div class="col-md-12" style="margin-left:15px;">
                 <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
                 @if($errors->has('g-recaptcha-response'))
                     <span class="invalid-feedback" style="display:block">
