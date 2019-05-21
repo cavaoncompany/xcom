@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('home', compact('content'));
 });
 
-Route::post('/', function(\Illluminate\Http\Request $request){
-        var_dump($request->all());
-});
+Route::get('/sendemail', 'sendEmailController@index');
+Route::post('/sendemail/send', 'sendEmailController@sendEmail');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

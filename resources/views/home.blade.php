@@ -1,24 +1,3 @@
-<?php
-
-    if(isset($_POST['contactButton'])){
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $privatekey = "6LcvY6QUAAAAAHAfoHmGogD1HTuqpSbU0MIIOw7J";
-
-        $response = file_get_contents($url."?secret=".$privatekey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);
-        
-        $data = json_decode($response);
-
-        if(isset($data->success) AND $data->success == true){
-            header('Location: home.blade.php?CaptchaPass=True');
-        }else{
-            header('Location: home.blade.php?CaptchaFail=True');
-        }
-    }
-?>
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -28,23 +7,18 @@
     <meta name="description" content="xcom blog">
     <title>XCOM</title>
 
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/pricing/"> -->
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/6773FB36-6498-364E-8507-8569F6DD40C7/main.js" charset="UTF-8"></script> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
-    <script src="../js/email.js?ver={{date('YmdHis')}}" ></script>
+   
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>  
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="xcomstyle.css?ver={{date('YmdHis')}}">
     @foreach($content as $one)
     <?php  $xcomcontent[$one->category] = $one->content  ?>
     @endforeach
-
-    <script src="https://www.google.com/recaptcha/api.js?render=6LcvY6QUAAAAAJazpAX_vHOCJPNnOYEBizvJnTSm"></script>
+   
 </head>
 <style>
      #about {
@@ -153,46 +127,51 @@
         <p class="centered">{{ $xcomcontent['AboutDescription']}}</p>
     </div>
 
-    <form id="contactform" class="container text-center" action="" method="post">
+    <div class="alert alert-danger print-error-msg" style="display:none">
+        <ul></ul>
+    </div>
+
+    <form id="contactform" class="container text-center"  action="{{url('sendemail/send')}}" method="post">
+        @csrf
         <div class="row">
             <div class="col-md-12" style="margin-bottom: 40px;">
                 <h4 style="margin: 30px 0; font-size:24px;">Contact Us</h4>
                 <div class="line"></div>
-                <?php if(isset($_GET['CaptchaPass'])){ ?>
-                    <div class="col-md-12">Message Sent</div>
-                <?php }?>
-                <?php if(isset($_GET['CaptchaFail'])){ ?>
-                    <div class="col-md-12">Message failed</div>
-                <?php }?>
             </div>
+
             <div class="col-md-12">     
             <div class="col-md-6 inputstyle">
                 
-                <input type="text" class="form-control" id="firstname" placeholder="* First name">
+                <input type="text" class="form-control" name="firstname" placeholder="* First name">
                 <span id="firstnameerror" class="errormsg"></span>
             </div>
             <div class="col-md-6 inputstyle">
                 
-                <input type="text" class="form-control" id="lastname" placeholder="* Last name">
+                <input type="text" class="form-control" name="lastname" placeholder="* Last name">
                 <span id="lastnameerror" class="errormsg"></span>
             </div>
         </div>
         <div class="col-md-12">
             <div class="col-md-6 inputstyle">
             
-                <input type="email" class="form-control"  id="email" placeholder="* Email">
+                <input type="email" class="form-control"  name="email" placeholder="* Email">
                 <span id="emailerror" class="errormsg"></span>
             </div>
             <div class="col-md-6 inputstyle">
-                <input type="number" class="form-control" id="phonenumber" placeholder="Phone" height="50px">
+                <input type="number" class="form-control" name="phonenumber" placeholder="Phone" height="50px">
             </div>
         </div>
             <div class="col-md-12 inputstyle">
-                <textarea type="text" class="form-control" id="message" placeholder="Message"
+                <textarea type="text" class="form-control" name="message" placeholder="Message"
                     style="margin-bottom:20px; margin:0 auto; width:94%" rows="6"></textarea>
             </div>
-            <div class="col-md-12 inputstyle">
-                <div class="g-recapcha" ></div>
+            <div class="col-md-12 ">
+                <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+                @if($errors->has('g-recaptcha-response'))
+                    <span class="invalid-feedback" style="display:block">
+                        <strong>{{$errors->first('g-captcha-response')}}</strong>
+                    </span>
+                @endif
             </div>
             <div class="col-md-12 inputstyle">
                 <button type="submit" id="contactButton" class="btn btn-outline-primary" onclick="sendEmail()">Send Message</button>
@@ -218,7 +197,36 @@
 
         </div>
     </footer>
+    <script>
+            $('#contactform').on('submit', function(e){
+                e.preventDefault();
+                data= $(this).serialize();
+                url=$(this).attr('action');
+                $.ajax({
+                    url: url,
+                    type:'POST',
+                    data:data,
+                    success:function(data){
+                        
+                        if($.isEmptyObject(data.error)){
+                           
+                        }else{
+                            printMessageErrors(data.error)
+                        }
+                    }
+                })
 
+            });
+
+            function printMessageErrors(msg){
+                $('.print-error-msg').find('ul').empty();
+                $('.print-error-msg').css('display', 'block');
+
+                $.each(msg, function(key, value){
+                    $('.print-error-msg').find('ul').append("<li>"+ value + "</li>")
+                })
+            }
+    </script> 
 </body>
 
 </html>
