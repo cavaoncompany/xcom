@@ -145,7 +145,10 @@
         }
 
         .form-control{
-            border-radius: 0 !important;
+            border-radius: 0 !important;   
+        }
+
+        .form-control input{
             height: 50px !important;
         }
 
