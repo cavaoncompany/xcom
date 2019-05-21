@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('home', compact('content'));
 });
 
+Route::get('/thankyou', function(){
+    return view('thankyou');
+})->name('thankyou');
+
+
 Route::get('/sendemail', 'sendEmailController@index');
 Route::post('/sendemail/send', 'sendEmailController@sendEmail')->name('send-email');
 

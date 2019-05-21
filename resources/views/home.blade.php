@@ -175,7 +175,7 @@
                 @endif
             </div>
             <div class="col-md-12 inputstyle">
-                <button type="submit" name="send" class="btn btn-outline-primary" >Send Message</button>
+                <button type="submit" id="sendBtn" name="send" class="btn btn-outline-primary" >Send Message</button>
             </div>
         </div>
     </form>
@@ -199,8 +199,10 @@
         </div>
     </footer>
     <script>
+            
             $('#contactform').on('submit', function(e){
                 e.preventDefault();
+                $('#sendBtn').attr("disabled", true)
                 data= $(this).serialize();
                 url=$(this).attr('action');
                 $.ajax({
@@ -208,9 +210,9 @@
                     type:'POST',
                     data:data,
                     success:function(data){
-                        
+                       
                         if($.isEmptyObject(data.error)){
-                           
+                           goToSuccessPage()
                         }else{
                             printMessageErrors(data.error)
                         }
@@ -220,6 +222,7 @@
             });
 
             function printMessageErrors(msg){
+                $('#sendBtn').removeAttr("disabled");
                 $('.print-error-msg').find('ul').empty();
                 $('.print-error-msg').css('display', 'block');
 
@@ -227,7 +230,12 @@
                     $('.print-error-msg').find('ul').append("<li>"+ value + "</li>")
                 })
             }
-    </script> 
+
+            function goToSuccessPage(){
+                let url = "{{route('thankyou')}}";
+                $(location).attr('href',url);
+            }
+        </script>
 </body>
 
 </html>

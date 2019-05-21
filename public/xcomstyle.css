@@ -146,7 +146,7 @@
 
         .form-control{
             border-radius: 0; !important
-            
+            height: 50px;
         }
 
         #contactform .btn{
