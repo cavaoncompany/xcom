@@ -132,7 +132,7 @@
         <ul></ul>
     </div>
 
-    <form id="contactform" class="container text-center"  action="{{url('sendemail/send')}}" method="post">
+    <form id="contactform" class="container text-center"  action="{{ route('send-email') }}" method="post">
         @csrf
         <div class="row">
             <div class="col-md-12" style="margin-bottom: 40px;">

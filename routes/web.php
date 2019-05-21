@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/sendemail', 'sendEmailController@index');
-Route::post('/sendemail/send', 'sendEmailController@sendEmail', 'https');
+Route::post('/sendemail/send', 'sendEmailController@sendEmail')->name('send-email');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
