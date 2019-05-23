@@ -21,82 +21,57 @@
     }
 
 
-    .Aligner {
-  display: flex;
-  align-items: center;
-
-  justify-content: center;
-}
-
-.Aligner-item {
-  flex: 1;
-  max-width:30%;
-  margin-top:35%;
-}
-@media only screen and (max-width: 767px) {
-    .Aligner-item {
-        display:block;
-        margin:20px auto;
-        margin-left:110px;
-    }
-    .Aligner-item-bottom{
-        color:white;
-    }
-}
-
-@media only screen and (min-width:767px) and (max-width: 1024px) {
-    .Aligner-item {
-        margin-top:100%;
-    }
-}
-.Aligner-item-bottom
-{
-    position: fixed;
-    bottom: 0;
-}
-
-.login-sidebar{
-    background: #2c5e2e !important;
-   
-}
-.login-container p{
-    color:white !important;
-    font-size: 16px !important;
+    @media only screen and (max-height: 767px) {
+        .leftside{
+            height: 20vh;
+        }
     }
 
-.remember-me-text{
+    @media only screen and (min-width:767px)  {
+        .leftside{
+            height: 90vh; 
+        }
+    }
+    .Aligner-item-bottom
+    {
+        position: fixed;
+        bottom: 0;
+    }
+
+    .login-sidebar{
+        background: #2c5e2e !important;
+    
+    }
+    .login-container p{
+        color:white !important;
+        font-size: 16px !important;
+        }
+
+    .remember-me-text{
         color: white !important;
     }
     .login-button{
         background-color: white !important;
         color:#2c5e2e !important;
     }
+
+    .leftside{
+        display: flex;
+        padding-top:10px;
+    }
+
+    .centered-image{
+        margin:auto;
+    }
 </style>
 <body class="login">
 <div class="container-fluid">
     <div class="row">
         
-        <div class="col-xs-12 col-sm-7 col-md-8">
-         
-                <!-- <div class="col-sm-12 col-md-10 col-md-offset-2">
-                    
-                        <div class="adminLoginImg ">
-                            <img src="http://localhost/cms/public/storage/XCOMHomePage/xcomlogo.png" width="20%"/>
-                        </div>
-                       
-                            
-                            <p>{{ Voyager::setting('admin.description', __('voyager::login.welcome')) }}</p>
-                        
-                    
-                </div> -->
-                <div class="Aligner">
- 
-                    <div class="Aligner-item">
-                        <img src="https://xcom-layout.herokuapp.com/images/xcomlogo.png" />
-                    </div>
-                   
-                </div>
-            
+        <div class="col-xs-12 col-sm-7 col-md-8 leftside">
+    
+            <img class="centered-image" src="https://xcom-layout.herokuapp.com/images/xcomlogo.png">
+
         </div>
        
         
