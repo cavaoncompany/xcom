@@ -92,7 +92,7 @@
                 <div class="Aligner">
  
                     <div class="Aligner-item">
-                        <img src="http://localhost/cms/public/storage/XCOMHomePage/xcomlogo.png" />
+                        <img src="https://xcom-layout.herokuapp.com/images/xcomlogo.png" />
                     </div>
                    
                 </div>
