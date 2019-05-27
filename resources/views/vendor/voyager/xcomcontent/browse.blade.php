@@ -7,11 +7,11 @@
         <h1 class="page-title">
             <i class="{{ $dataType->icon }}"></i> Xcom Contents
         </h1>
-        @can('add', app($dataType->model_name))
+        {{-- @can('add', app($dataType->model_name))
             <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
             </a>
-        @endcan
+        @endcan --}}
     
         @foreach(Voyager::actions() as $action)
             @if (method_exists($action, 'massAction'))
@@ -38,7 +38,7 @@
   <!-- Nav pills -->
   <ul class="nav nav-pills" role="tablist" style="padding:10px; margin-left:60px;">
     <li class="nav-item active">
-      <a class="nav-link " data-toggle="pill" href="#home">XCOM INFORMATION</a>
+      <a class="nav-link " data-toggle="pill" href="#home">GENERAL CONTENTS</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="pill" href="#menu1">SERVICE</a>
@@ -74,6 +74,7 @@
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
         @foreach($infodata as $data)
+    
         <ul class="list-inline col-md-6">
         <li>
         <form>
@@ -86,7 +87,7 @@
                         </p>
                         <div class="text-right">
                             <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            <a href="#" class="card-link btn btn-danger delete" type="button"  data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a>
+                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button"  data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a> --}}
                         </div>
                     </div>
                 </div>
@@ -98,6 +99,7 @@
     </div>
     <div id="menu1" class="container tab-pane fade"><br>
           @foreach($servicedata as $data)
+
           <ul class="list-inline {{$data->category=='ServiceTitle'? 'col-md-12':'col-md-6'}}">
         <li>
         <form>
@@ -110,7 +112,7 @@
                         </p>
                         <div class="text-right">
                             <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a>
+                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a> --}}
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,7 @@
                         </p>
                         <div class="text-right">
                             <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}" >Delete</a>
+                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}" >Delete</a> --}}
                         </div>
                     </div>
                 </div>
