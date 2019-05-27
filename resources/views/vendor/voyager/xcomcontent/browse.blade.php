@@ -110,7 +110,7 @@
                         </p>
                         <div class="text-right">
                             <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            <a href="#" class="card-link btn btn-danger deleteBtn" type="button" data-id={{$data->id}} id="delete-"{{$data->id}}>Delete</a>
+                            <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                         </p>
                         <div class="text-right">
                             <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            <a href="#" class="card-link btn btn-danger delete" type="button"  >Delete</a>
+                            <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}" >Delete</a>
                         </div>
                     </div>
                 </div>
