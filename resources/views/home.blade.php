@@ -92,15 +92,15 @@
             <div class="col-md-3 ">
                 <div style=" max-height:300px; margin: 0 5px ">
                     <h1 class="my-0 font-weight-normal">01</h1>
-                    <h4>{{ $xcomcontent['FirstServiceTitle']}}</h4>
-                    <p>{{ $xcomcontent['FirstServiceDescription']}}</p>
+                    <h4>{{ $xcomcontent['01Title']}}</h4>
+                    <p>{{ $xcomcontent['01Description']}}</p>
                 </div>
             </div>
             <div class="col-md-3 ">
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal">02</h1>
-                    <h4>{{ $xcomcontent['SecondServiceTitle']}}</h4>
-                    <p>{{ $xcomcontent['SecondServiceDescription']}}</p>
+                    <h4>{{ $xcomcontent['02Title']}}</h4>
+                    <p>{{ $xcomcontent['02Description']}}</p>
 
                 </div>
             </div>
@@ -108,15 +108,15 @@
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal ">03</h1>
 
-                    <h4>{{ $xcomcontent['ThirdServiceTitle']}}</h4>
-                    <p>{{ $xcomcontent['ThirdServiceDescription']}}</p>
+                    <h4>{{ $xcomcontent['03Title']}}</h4>
+                    <p>{{ $xcomcontent['03Description']}}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div style="max-height:300px; margin:5px;">
                     <h1 class="my-0 font-weight-normal">04</h1>
-                    <h4>{{ $xcomcontent['FourthServiceTitle']}}</h4>
-                    <p>{{ $xcomcontent['FourthServiceDescription']}}</p>
+                    <h4>{{ $xcomcontent['04Title']}}</h4>
+                    <p>{{ $xcomcontent['04Description']}}</p>
 
                 </div>
             </div>
