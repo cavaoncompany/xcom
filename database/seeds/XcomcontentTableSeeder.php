@@ -51,7 +51,6 @@ class XcomcontentTableSeeder extends Seeder
         
             5 => 
             array (
-<<<<<<< HEAD
                 'id' => 7,
                 'category' => 'FirstServiceDescription',
                 'content' => 'Not really up to speed with your IT Infrastructure we can audit your infrastructure and propose technology upgrades that suite your needs and budget. This can be scoped and applied in transitional stages to limit downtime and maximize up-time.',
@@ -141,17 +140,6 @@ class XcomcontentTableSeeder extends Seeder
                 'content' => 'https://xcom-layout.herokuapp.com/images/phoneicon.png',
                 'section' => 'info',
             ),
-=======
-                'id' => 6,
-                'category' => 'Footer',
-                'content' => json_encode(['FooterCopyright'=>'Copyright © 2019 Xcom IT Solution. All rights reserved.',
-                'footerLogo'=>'http://localhost/cms/public/storage/XCOMHomePage/xcomlogo.png',
-                'footerLogoUrl'=>'http://localhost'
-                ]),
-                'section' => 'info',
-            ),
-   
->>>>>>> 069e8278f10dff83301cf3ddcf165e7bbd923fe0
         ));
         
         
