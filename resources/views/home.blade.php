@@ -26,14 +26,14 @@
         position: relative;
         text-align: center;
         color: white;
-        background-image: url(<?php echo $xcomcontent['AboutBackgroundImageUrl'] ?>);
+        background-image: url(<?php echo $xcomcontent['AboutBackgroundImage'] ?>);
         width:100%;
         background-size: 100% 100%;
         height:300px;
         margin: 150px 0 50px 0;
         }
     .hero-image {
-        background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['MainImageUrl'] ?>);
+        background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['HeroBackgroundImage'] ?>);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -51,7 +51,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#"><img src='<?php echo $xcomcontent['LOGOImageUrl'] ?>'  alt="logo"></a>
+                    <a href={{$xcomcontent['LogoImageUrl']}}><img src='<?php echo $xcomcontent['LogoImage'] ?>'  alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -59,7 +59,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src='<?php echo $xcomcontent['PhoneIconImageUrl'] ?>' />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
+                            <img src='<?php echo $xcomcontent['PhoneIconImage'] ?>' />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
                         </li>
                     </ul>
 
@@ -72,9 +72,9 @@
 
         <div class="hero-text align-center">
             <div class="container">
-                <h1>{{ $xcomcontent['MainTitle'] }}</h1>
-                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $xcomcontent['MainDescription']}}</p>
-                <a type="button" class="startBtnStyle">Go Started Now</a>
+                <h1>{{ $xcomcontent['HeroTitle'] }}</h1>
+                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $xcomcontent['HeroContents']}}</p>
+                <a type="button" class="startBtnStyle" href={{$xcomcontent['HeroButtonUrl']}}>{{$xcomcontent['HeroButton']}}</a>
 
             </div>
         </div>
@@ -188,10 +188,12 @@
                 </nav>
             </div>
             <div class="col-md-4 text-center" style="padding: 10px 0;">
-                <img src="../images/Footerlogo.png" alt="footerlogoimg" />
+                <a href={{$xcomcontent['FooterLogoImageUrl']}}>
+                    <img src='<?php echo $xcomcontent['FooterLogoImage'] ?>' alt="footerlogoimg" />
+                </a>
             </div>
             <div class="col-md-4 text-center">
-                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $xcomcontent['FooterCopyright']}}</p>
+                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $xcomcontent['Copyright']}}</p>
             </div>
 
         </div>

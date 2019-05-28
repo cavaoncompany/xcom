@@ -73,8 +73,8 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
+        
         @foreach($infodata as $data)
-    
         <ul class="list-inline col-md-6">
         <li>
         <form>
