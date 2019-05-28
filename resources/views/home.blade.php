@@ -16,24 +16,36 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>  
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="xcomstyle.css?ver={{date('YmdHis')}}">
-    @foreach($content as $one)
-    <?php  $xcomcontent[$one->category] = $one->content  ?>
-    @endforeach
-   
+    <?php 
+        //[0][0]the first 0 means the database order, the second 0 means which records
+        define('header', [0][0]);
+        define('herobanner', [1][0]);
+        define('servicetitle', [2][0]);
+        define('services', 3);
+        define('about', [4][0]);
+        define('footer', [5][0]);
+        $xcomcontent = array();
+        foreach($content as $one){
+            array_push($xcomcontent, json_decode($one->content));
+                    
+        }
+        
+    ?>
+  
 </head>
 <style>
      #about {
         position: relative;
         text-align: center;
         color: white;
-        background-image: url(<?php echo $xcomcontent['AboutBackgroundImageUrl'] ?>);
+        background-image: url(<?php echo $xcomcontent[about]->imageUrl ?>);
         width:100%;
         background-size: 100% 100%;
         height:300px;
         margin: 150px 0 50px 0;
         }
     .hero-image {
-        background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent['MainImageUrl'] ?>);
+        background-image: linear-gradient(90deg, rgba(32, 53, 32, 1) 0%, rgba(32, 53, 32, 0.5) 50%, rgba(255, 255, 255, 0.5) 100%), url(<?php echo $xcomcontent[herobanner]->HeroImage  ?>);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -51,7 +63,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="#"><img src='<?php echo $xcomcontent['LOGOImageUrl'] ?>'  alt="logo"></a>
+                    <a href={{$xcomcontent[header]->logoUrl}}><img src='<?php echo $xcomcontent[header]->logoImg ?>'  alt="logo"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -59,7 +71,7 @@
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#contactform">CONTACT</a></li>
                         <li style="color:#2c5e2e; padding: 13px 0 0 30px;">
-                            <img src='<?php echo $xcomcontent['PhoneIconImageUrl'] ?>' />&nbsp; &nbsp; {{ $xcomcontent['PhoneNumber']}}
+                            <img src='<?php echo $xcomcontent[header]->phoneIcon ?>' />&nbsp; &nbsp; {{ $xcomcontent[header]->phoneNumber}}
                         </li>
                     </ul>
 
@@ -72,16 +84,16 @@
 
         <div class="hero-text align-center">
             <div class="container">
-                <h1>{{ $xcomcontent['MainTitle'] }}</h1>
-                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $xcomcontent['MainDescription']}}</p>
-                <a type="button" class="startBtnStyle">Go Started Now</a>
+                <h1>{{ $xcomcontent[herobanner]->HeroTitle }}</h1>
+                <p style="padding: 30px 0 40px 0; font-size:18px;">{{ $xcomcontent[herobanner]->HeroContents}}</p>
+                <a type="button" class="startBtnStyle" href={{$xcomcontent[herobanner]->HeroButtonUrl}}>{{$xcomcontent[herobanner]->HeroButton}}</a>
 
             </div>
         </div>
     </div>
 
     <div class="services-header text-center" id="ourServices">
-        <h3 style="font-size: 24px; color:#212121; ">{{ $xcomcontent['ServiceTitle'] }}</h3>
+        <h3 style="font-size: 24px; color:#212121; ">{{ $xcomcontent[servicetitle]->ServiceTitle }}</h3>
         <div class="line" style="padding-top:15px"></div>
     </div>
 
@@ -90,15 +102,25 @@
             <div class="col-md-3 ">
                 <div style=" max-height:300px; margin: 0 5px ">
                     <h1 class="my-0 font-weight-normal">01</h1>
+<<<<<<< HEAD
                     <h4>{{ $xcomcontent['FirstServiceTitle']}}</h4>
                     <p>{{ $xcomcontent['FirstServiceDescription']}}</p>
+=======
+                    <h4>{{ $xcomcontent[services][0]->title}}</h4>
+                    <p>{{ $xcomcontent[services][0]->description}}</p>
+>>>>>>> 069e8278f10dff83301cf3ddcf165e7bbd923fe0
                 </div>
             </div>
             <div class="col-md-3 ">
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal">02</h1>
+<<<<<<< HEAD
                     <h4>{{ $xcomcontent['SecondServiceTitle']}}</h4>
                     <p>{{ $xcomcontent['SecondServiceDescription']}}</p>
+=======
+                    <h4>{{ $xcomcontent[services][1]->title}}</h4>
+                    <p>{{ $xcomcontent[services][1]->description}}</p>
+>>>>>>> 069e8278f10dff83301cf3ddcf165e7bbd923fe0
 
                 </div>
             </div>
@@ -106,15 +128,25 @@
                 <div style="max-height:300px; margin: 5px ">
                     <h1 class="my-0 font-weight-normal ">03</h1>
 
+<<<<<<< HEAD
                     <h4>{{ $xcomcontent['ThirdServiceTitle']}}</h4>
                     <p>{{ $xcomcontent['ThirdServiceDescription']}}</p>
+=======
+                    <h4>{{ $xcomcontent[services][2]->title}}</h4>
+                    <p>{{ $xcomcontent[services][2]->description}}</p>
+>>>>>>> 069e8278f10dff83301cf3ddcf165e7bbd923fe0
                 </div>
             </div>
             <div class="col-md-3">
                 <div style="max-height:300px; margin:5px;">
                     <h1 class="my-0 font-weight-normal">04</h1>
+<<<<<<< HEAD
                     <h4>{{ $xcomcontent['FourthServiceTitle']}}</h4>
                     <p>{{ $xcomcontent['FourthServiceDescription']}}</p>
+=======
+                    <h4>{{ $xcomcontent[services][3]->title}}</h4>
+                    <p>{{ $xcomcontent[services][3]->description}}</p>
+>>>>>>> 069e8278f10dff83301cf3ddcf165e7bbd923fe0
 
                 </div>
             </div>
@@ -123,7 +155,7 @@
     </div>
 
     <div id="about">
-        <p class="centered">{{ $xcomcontent['AboutDescription']}}</p>
+        <p class="centered">{{ $xcomcontent[about]->description}}</p>
     </div>
 
     <div class="alert alert-danger print-error-msg" style="display:none">
@@ -188,10 +220,12 @@
                 </nav>
             </div>
             <div class="col-md-4 text-center" style="padding: 10px 0;">
-                <img src="../images/Footerlogo.png" alt="footerlogoimg" />
+                <a href={{$xcomcontent[footer]->footerLogoUrl}}>
+                    <img src='<?php echo $xcomcontent[footer]->footerLogo ?>' alt="footerlogoimg" />
+                </a>
             </div>
             <div class="col-md-4 text-center">
-                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $xcomcontent['FooterCopyright']}}</p>
+                <p style="font-size:14px; padding: 25px 0 10px 0;">{{ $xcomcontent[footer]->FooterCopyright}}</p>
             </div>
 
         </div>
