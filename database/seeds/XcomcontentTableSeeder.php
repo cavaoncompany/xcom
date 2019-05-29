@@ -48,7 +48,7 @@ class XcomcontentTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 6,
-                'category' => 'firstTitle',
+                'category' => '01Title',
                 'content' => 'Email Hosting and Security',
                 'section'=> 'service',
                 'part'=>'01'
@@ -57,7 +57,7 @@ class XcomcontentTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 7,
-                'category' => 'FirstServiceDescription',
+                'category' => '01Description',
                 'content' => 'Not really up to speed with your IT Infrastructure we can audit your infrastructure and propose technology upgrades that suite your needs and budget. This can be scoped and applied in transitional stages to limit downtime and maximize up-time.',
                 'section'=> 'service',
                 'part'=>'01'
@@ -65,7 +65,7 @@ class XcomcontentTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 8,
-                'category' => 'SecondServiceTitle',
+                'category' => '02Title',
                 'content' => 'Support Desk',
                 'section'=> 'service',
                 'part'=>'02'
@@ -73,7 +73,7 @@ class XcomcontentTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 9,
-                'category' => 'SecondServiceDescription',
+                'category' => '02Description',
                 'content' => 'Remote and onsite support from our Sydney based Engineers with guaranteed response and resolution times.',
                 'section'=> 'service',
                 'part'=>'02'
@@ -81,7 +81,7 @@ class XcomcontentTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 10,
-                'category' => 'ThirdServiceTitle',
+                'category' => '03Title',
                 'content' => 'File Sharing',
                 'section'=> 'service',
                 'part'=>'03'
@@ -89,7 +89,7 @@ class XcomcontentTableSeeder extends Seeder
             9 => 
             array (
                 'id' => 11,
-                'category' => 'ThirdServiceDescription',
+                'category' => '03Description',
                 'content' => 'Your data is secure and available across any device. Share files within your organization or externally with a few clicks.',
                 'section'=> 'service',
                 'part'=>'03'
@@ -97,7 +97,7 @@ class XcomcontentTableSeeder extends Seeder
             10 => 
             array (
                 'id' => 12,
-                'category' => 'FourthServiceTitle',
+                'category' => '04Title',
                 'content' => 'Business Continuity and Disaster Recovery',
                 'section'=> 'service',
                 'part'=>'04'
@@ -105,7 +105,7 @@ class XcomcontentTableSeeder extends Seeder
             11 => 
             array (
                 'id' => 13,
-                'category' => 'FourthServiceDescription',
+                'category' => '04Description',
                 'content' => 'We provide the tools and assurance that your data is protected and recoverable. 24 x 7 monitoring and management of your networks and servers whether they’re in the cloud or in your office.',
                 'section'=> 'service',
                 'part'=>'04'
@@ -188,7 +188,7 @@ class XcomcontentTableSeeder extends Seeder
                 'category' => 'ToEmail',
                 'content' => 'admin@admin.com',
                 'section' => 'info',
-                'part'=>'info'
+                'part'=>'toemail'
             ),
             22 => 
             array (

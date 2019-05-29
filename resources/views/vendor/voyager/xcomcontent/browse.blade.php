@@ -23,28 +23,59 @@
 @stop
 
 <style>
-.text-right{
-    position:absolute;
-    right:5px;
-    bottom:0;
+.tab-content .valueStyle{
+    border: solid 1px;
+    border-color: #e4e4e4;
+    padding: 10px;
+}
+.tab-content .card{
+    padding:15px;
+}
+.tab-content .card-header{
+    color: black;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.tab-content .itemStyle{
+    margin:20px 0;
+}
+.tab-content{
+    margin-left:-10px;
+}
+.voyager{
+    background-color:#f9f9f9 !important;
+}
+@media only screen and (min-width: 500px) {
+.xcomnavs{
+    padding:10px; 
+    margin-left:70px !important;
+}}
+@media only screen and (max-width: 500px) {
+    .xcomnavs{
+        margin-left:0;
+    }
+}
+.itemStyle h5{
+    color:black;
 }
 </style>
 
 @section('content')
     <div class="page-content browse container-fluid">
         @include('voyager::alerts')
-           
+          
   <br>
   <!-- Nav pills -->
-  <ul class="nav nav-pills" role="tablist" style="padding:10px; margin-left:60px;">
+  <ul class="nav nav-pills xcomnavs" role="tablist" id="tabMenu">
     <li class="nav-item active">
       <a class="nav-link " data-toggle="pill" href="#home">GENERAL CONTENTS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu1">SERVICE</a>
+      <a class="nav-link" data-toggle="pill" href="#service">SERVICE</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="pill" href="#menu2">ABOUT</a>
+      <a class="nav-link" data-toggle="pill" href="#about">ABOUT</a>
     </li>
   </ul>
  
@@ -54,97 +85,215 @@
         define('info', "XCOM INFORMATION");
         define('service', "SERVICE");
         define('about', "ABOUT");
-        $infodata = array();
-        $servicedata = array();
+        $headerdata = array();
+        $herodata = array();
+        $servicetitledata = array();
         $aboutdata = array();
-  ?>                               
-     @foreach($dataTypeContent as $data)
-        @if ($data->section =="info")
-         <?php    array_push($infodata, $data); ?>
-        @endif
-         @if ($data->section =="service")
-         <?php    array_push($servicedata, $data); ?>
-        @endif
-        @if ($data->section =="about")
-         <?php    array_push($aboutdata, $data); ?>
-        @endif
-     @endforeach 
-    
+        $footerdata = array();
+        $firstservicedata = array();
+        $secondservicedata = array();
+        $thirdservicedata = array();
+        $forthservicedata = array();
+        $emaildata = array();
+                         
+     foreach($dataTypeContent as $data){
+        if ($data->part =="Header"){
+            array_push($headerdata, $data); 
+        }
+        if ($data->part =="servicetitle"){
+            array_push($servicetitledata, $data); 
+        }
+        if ($data->part =="01"){
+            array_push($firstservicedata, $data); 
+        }
+        if ($data->part =="02"){
+            array_push($secondservicedata, $data); 
+        }
+        if ($data->part =="03"){
+            array_push($thirdservicedata, $data); 
+        }
+        if ($data->part =="04"){
+            array_push($forthservicedata, $data); 
+        }
+        if ($data->part =="about"){
+            array_push($aboutdata, $data);
+        }     
+        if ($data->part =="HeroBanner"){
+            array_push($herodata, $data);
+        }
+        if ($data->part =="Footer"){
+            array_push($footerdata, $data);
+        }   
+        if ($data->part == "toemail"){
+            array_push($emaildata, $data);
+        }        
+     }
+   ?>   
   <!-- Tab panes -->
   <div class="tab-content">
     <div id="home" class="container tab-pane active"><br>
-        
-        @foreach($infodata as $data)
-        <ul class="list-inline col-md-6">
-        <li>
-        <form>
-            <div class="form-group ">
-                <div class="card" style="width: 35rem; height:15rem">
-                    <div class="card-body">
-                        <h5 class="card-title">{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
-                        <p class="card-text">  
-                                {{$data->content}} 
-                        </p>
-                        <div class="text-right">
-                            <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button"  data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a> --}}
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-md-12 card">
+            <h4 class="col-md-12 card-header">Header</h4>
+            <?php $id=array() ?>
+            @foreach ($headerdata as $data)
+            <div class="col-md-6 itemStyle">
+                <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                <p class="valueStyle"> {{$data->content}} </p> 
             </div>
-        </form>
-        </li>
-        </ul>
-           @endforeach
-    </div>
-    <div id="menu1" class="container tab-pane fade"><br>
-          @foreach($servicedata as $data)
+            <?php array_push($id, $data->id); ?>
+            @endforeach
+            <div class="col-md-12 text-left">
+                <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+            </div>
+        </div>
+        <div class="col-md-12 card">
+            <h4 class="col-md-12 card-header">Hero Banner</h4>
+            <?php $id=array() ?>
+            @foreach ($herodata as $data)
+            <div class="col-md-6 itemStyle">
+                <h5 style="color:#000">{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                <p class="valueStyle"> {{$data->content}} </p>  
+            </div>
+            <?php array_push($id, $data->id); ?>
+            @endforeach
+            <div class="col-md-12 text-left">
+                <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+            </div>
+        </div>
 
-          <ul class="list-inline {{$data->category=='ServiceTitle'? 'col-md-12':'col-md-6'}}">
-        <li>
-        <form>
-            <div class="form-group ">
-                <div class="card" style="width: 35rem; height:15rem">
-                    <div class="card-body">
-                        <h5 class="card-title">{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
-                        <p class="card-text">  
-                                {{$data->content}} 
-                        </p>
-                        <div class="text-right">
-                            <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}">Delete</a> --}}
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-12 card">
+            <h4 class="col-md-12 card-header">Footer</h4>
+            <?php $id=array() ?>
+            @foreach ($footerdata as $data)
+            <div class="col-md-6 itemStyle">
+                <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                <p class="valueStyle"> {{$data->content}} </p>
             </div>
-        </form>
-        </li>
-        </ul>
-           @endforeach
+            <?php array_push($id, $data->id); ?>
+            @endforeach
+            <div class="text-left col-md-12">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+            </div>
+        </div>
+
+        <div class="col-md-12 card">
+            <h4 class="col-md-12 card-header">To Email</h4>
+            <?php $id=array() ?>
+            @foreach ($emaildata as $data)
+            <div class="col-md-6 itemStyle">
+                <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                <p class="valueStyle"> {{$data->content}} </p>
+            </div>
+            <?php array_push($id, $data->id); ?>
+            @endforeach
+            <div class="text-left col-md-12">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+            </div>
+        </div>
+      </div>
     </div>
-    <div id="menu2" class="container tab-pane fade"><br>
-     @foreach($aboutdata as $data)
-       <ul class="list-inline col-md-6">
-        <li>
-        <form>
-            <div class="form-group">
-                <div class="card" style="width: 35rem; height:20rem">
-                    <div class="card-body">
-                        <h5 class="card-title">{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
-                        <p class="card-text">  
-                                {{$data->content}} 
-                        </p>
-                        <div class="text-right">
-                            <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{$data->id}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
-                            {{-- <a href="#" class="card-link btn btn-danger delete" type="button" data-id={{$data->id}} id="delete-{{$data->id}}" >Delete</a> --}}
-                        </div>
-                    </div>
+    <div id="service" class="container tab-pane fade"><br>
+        <div class="row">
+
+           @foreach ($servicetitledata as $data)
+           <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">{{$data->part}}</h4>
+                <?php $id=array() ?>
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
-        </form>
-        </li>
-        </ul>
-           @endforeach
+            
+            <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">01</h4>
+                <br>
+                <?php $id=array() ?>
+                @foreach ($firstservicedata as $data)
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle" style="min-height:88px;"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                </div>
+            </div>
+
+            <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">02</h4>
+                <br>
+                <?php $id=array() ?>
+                @foreach ($secondservicedata as $data)
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle" style="min-height:88px;"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                </div>
+            </div>
+
+            <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">03</h4>
+                <br>
+                <?php $id=array() ?>
+                @foreach ($thirdservicedata as $data)
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle" style="min-height:88px;"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                </div>
+            </div>
+
+            <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">04</h4>
+                <br>
+                <?php $id=array() ?>
+                @foreach ($forthservicedata as $data)
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle" style="min-height:88px;"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="container tab-pane fade">
+        <div class="row">
+            <div class="col-md-12 card">
+                <h4 class="col-md-12 card-header">About</h4>
+                <br>
+                <?php $id=array() ?>
+                @foreach ($aboutdata as $data)
+                <div class="col-md-6 itemStyle">
+                    <h5>{{preg_replace('/(?<!\ )[A-Z]/', ' $0', $data->category)}}</h5>
+                    <p class="valueStyle" style="min-height:154px;"> {{$data->content}} </p>
+                </div>
+                <?php array_push($id, $data->id); ?>
+                @endforeach
+                <div class="col-md-12 text-left">
+                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
             
@@ -177,6 +326,9 @@
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     @endif
     <script>
+         $(document).ready(function () {
+            $('#tabMenu a[href="#{{ old('tab') }}"]').tab('show')
+        });
         $(document).ready(function () {
             @if (!$dataType->server_side)
                 var table = $('#dataTable').DataTable({!! json_encode(
