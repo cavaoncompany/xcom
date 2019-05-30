@@ -23,11 +23,7 @@
 @stop
 
 <style>
-.tab-content .valueStyle{
-    border: solid 1px;
-    border-color: #e4e4e4;
-    padding: 10px;
-}
+
 .tab-content .card{
     padding:15px;
 }
