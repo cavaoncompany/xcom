@@ -14,6 +14,7 @@ use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
+use Validator;
 
 class XcomContentController extends VoyagerBaseController
 {
@@ -268,13 +269,20 @@ class XcomContentController extends VoyagerBaseController
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
         $section = null;
        
+        Validator::make($request->all(), [
+            'category.*.value' => 'required', 
+        ])->validate();
+
+        
         foreach($request->get('category', []) as $member){
             $section = $member['section'];
             $val = $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $member['id'])->validate();
            
             $member['content'] = $member['value'];
             unset($member['value']);
-           
+            // this->validate(
+            //     'content' ->required;
+            // );
             DB::table($slug)->where('id', $member['id'])
             ->update(array_except($member, ['id']));
         }

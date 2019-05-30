@@ -30,7 +30,9 @@ class sendEmailController extends Controller
                     'phonenumber'=>$request ->phonenumber,
                     'email' => $request->input('email')
                 );
-             $to = 'web@programmer.net';
+            $toEmail = App\Models\Xcomcontent::where('category', 'ToEmail')->first();
+          
+            $to = $toEmail['content'];
             Mail::to($to)->send(new SendMail($data));
             // return back()->with('success', 'Thanks for contacting us!');
             return response()->json(['success'=>true,'msg'=>'Send succeed']);
