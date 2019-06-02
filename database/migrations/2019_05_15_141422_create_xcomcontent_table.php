@@ -17,6 +17,7 @@ class CreateXcomcontentTable extends Migration {
 			$table->integer('id', true);
 			$table->text('category', 65535);
 			$table->text('content', 65535);
+			$table->text('part', 65535);
 		});
 	}
 
