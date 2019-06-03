@@ -140,7 +140,7 @@
             <?php array_push($id, $data->id); ?>
             @endforeach
             <div class="col-md-12 text-left">
-                <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
             </div>
         </div>
         <div class="col-md-12 card">
@@ -154,7 +154,7 @@
             <?php array_push($id, $data->id); ?>
             @endforeach
             <div class="col-md-12 text-left">
-                <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
             </div>
         </div>
 
@@ -169,7 +169,7 @@
             <?php array_push($id, $data->id); ?>
             @endforeach
             <div class="text-left col-md-12">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
             </div>
         </div>
 
@@ -184,7 +184,7 @@
             <?php array_push($id, $data->id); ?>
             @endforeach
             <div class="text-left col-md-12">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
             </div>
         </div>
       </div>
@@ -203,7 +203,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
             
@@ -219,7 +219,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.comadmin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
 
@@ -235,7 +235,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
 
@@ -251,7 +251,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
 
@@ -267,7 +267,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
         </div>
@@ -286,7 +286,7 @@
                 <?php array_push($id, $data->id); ?>
                 @endforeach
                 <div class="col-md-12 text-left">
-                    <a href="http://localhost:27000/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
+                    <a href="http://xcom-layout.herokuapp.com/admin/xcomcontent/{{implode("|",$id)}}/edit" class="card-link btn btn-warning" type="button" >Edit</a>
                 </div>
             </div>
         </div>
