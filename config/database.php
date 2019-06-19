@@ -46,10 +46,10 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'tkck4yllxdrw0bhi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-            'database' => 'odz0mgdasa2ev63v',
-            'username' => 'dmisalz38ct8ve7e',
-            'password' => 'ymh8nrul7j633n73',
+            'host' => 'staging.xcomit.com.au',
+            'database' => 'xcomitco_cms',
+            'username' => 'xcomitco_new',
+            'password' => '8DO]xT],tCz]',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

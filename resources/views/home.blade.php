@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="xcom blog">
+    <meta name="description" content="xcom blog,61430429687, With over 15 years of experience, we provide the resources & stability necessary for you to focus your efforts on where they belong">
+    <meta name="keywords" content="xcom IT solution Support Desk ,File Sharing1, Business Continuity and Disaster Recovery,Email Hosting and Security, 61430429687">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>XCOM</title>
 
